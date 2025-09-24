@@ -1,4 +1,4 @@
-# ironclad
+# Ironclad
 Ironclad Workflow Requests
 Overview
 This repository is dedicated to managing requests related to Ironclad development work. It serves as a centralized place for team members to propose new workflows, request changes to existing workflows, or deprecate workflows that are no longer in use.
