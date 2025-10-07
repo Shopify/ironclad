@@ -59,6 +59,8 @@ List team names. -->
 - **Reason this deadline must be met:**  
   (Please provide specific justification.)
 
+## Resources
+Identify any resources and working documents associated with this request.
 ---
 
 > *Please ensure all relevant parties have been informed prior to submission.*
