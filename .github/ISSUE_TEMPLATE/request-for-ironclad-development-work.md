@@ -60,7 +60,7 @@ List team names. -->
   (Please provide specific justification.)
 
 ## Resources
-Identify any resources and working documents associated with this request.
+<!--Identify any resources and working documents (gdocs, gsheets, Vault projects, etc) associated with this request.-->
 ---
 
 > *Please ensure all relevant parties have been informed prior to submission.*
