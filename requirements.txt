@@ -1,0 +1,54 @@
+# Ironclad MCP Server - Simplified Local Version
+# Following Shopify's MCP best practices
+
+# Official Python MCP SDK
+mcp>=1.0.0
+
+# HTTP client for Ironclad API
+httpx>=0.25.0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

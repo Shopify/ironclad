@@ -1,0 +1,238 @@
+{
+  "universalFields": {
+    "counterpartyName": {
+      "uiName": "Counterparty Name",
+      "apiField": "counterpartyName",
+      "dataType": "string",
+      "description": "Legal business name of the other party",
+      "searchable": true,
+      "required": true,
+      "usedBy": "all"
+    },
+    "shopifyEntity": {
+      "uiName": "Shopify Entity",
+      "apiField": "shopifyEntity_b6b03c00-e54d-4644-9b47-15c12d4809b7_string",
+      "dataType": "string",
+      "description": "Which Shopify legal entity is party to the contract",
+      "searchable": true,
+      "required": true,
+      "usedBy": "all"
+    },
+    "counterpartyContactName": {
+      "uiName": "Counterparty Contact Name",
+      "apiField": "contactNameCounterparty",
+      "dataType": "string",
+      "description": "Primary contact name at counterparty",
+      "searchable": true,
+      "required": false,
+      "usedBy": "all"
+    },
+    "counterpartyContactEmail": {
+      "uiName": "Counterparty Contact Email Address",
+      "apiField": "counterpartyContactEmailAddress_0e1fb205-c256-4efc-aa07-7eaf884b3dd9_email",
+      "dataType": "email",
+      "description": "Primary contact email at counterparty",
+      "searchable": true,
+      "required": false,
+      "usedBy": "all"
+    },
+    "effectiveDate": {
+      "uiName": "Effective Date",
+      "apiField": "effectiveDate",
+      "dataType": "date",
+      "description": "Contract start date",
+      "searchable": true,
+      "required": true,
+      "usedBy": "all"
+    },
+    "initialTermMonths": {
+      "uiName": "Initial Term (months)",
+      "apiField": "initialTermMonths_648ebaad-410a-4699-b44d-3766a659e1f0_number",
+      "dataType": "number",
+      "description": "Length of initial contract term in months",
+      "searchable": false,
+      "required": true,
+      "usedBy": "most",
+      "excludedFrom": ["plusNda", "nda"]
+    },
+    "renewalTermMonths": {
+      "uiName": "Renewal Term (months)",
+      "apiField": "renewalTerm_648ebaad-410a-4699-b44d-3766a659e1f0_number",
+      "dataType": "number",
+      "description": "Auto-renewal period in months",
+      "searchable": false,
+      "required": true,
+      "usedBy": "most",
+      "excludedFrom": ["plusNda", "nda"]
+    },
+    "noticeForNonRenewalDays": {
+      "uiName": "Notice for Non-Renewal (days)",
+      "apiField": "noticeForNonRenewal_648ebaad-410a-4699-b44d-3766a659e1f0_number",
+      "dataType": "number",
+      "description": "Days notice required to cancel or not renew",
+      "searchable": false,
+      "required": false,
+      "usedBy": "procurementAgreement and partnerships"
+    }
+  },
+  "revenueFields": {
+    "myShopifyUrl": {
+      "uiName": "My Shopify URL",
+      "apiField": "custome2e9166e97b6446f827926cdb3508de6_0e1fb205-c256-4efc-aa07-7eaf884b3dd9_string",
+      "dataType": "string",
+      "description": "The merchant's Shopify store URL (e.g., example.myshopify.com)",
+      "searchable": true,
+      "searchAlias": ["shopify url", "store url", "myshopify url"],
+      "required": true,
+      "usedBy": [
+        "plusAgreement",
+        "plusLargeAccountsAgreement",
+        "ccsForEnterprise",
+        "ccsComponents"
+      ],
+      "notes": "Can be used instead of counterpartyName to search for Plus contracts"
+    },
+    "brandName1": {
+      "uiName": "Brand Name 1",
+      "apiField": "brandName1_af134335-06fa-4c91-954a-76b70c08adb4_string",
+      "dataType": "string",
+      "description": "Primary brand name for the merchant",
+      "searchable": true,
+      "searchAlias": ["brand name", "brand"],
+      "required": true,
+      "usedBy": [
+        "plusAgreement",
+        "plusLargeAccountsAgreement",
+        "ccsForEnterprise",
+        "ccsComponents"
+      ],
+      "notes": "Can be used instead of counterpartyName to search for Plus contracts"
+    },
+    "minimumPlatformFee": {
+      "uiName": "Minimum Platform Fee ($)",
+      "apiField": "minimumPlatformFee_0e1fb205-c256-4efc-aa07-7eaf884b3dd9_monetaryAmount",
+      "dataType": "monetaryAmount",
+      "description": "Minimum monthly platform fee",
+      "searchable": false,
+      "required": true,
+      "usedBy": [
+        "plusAgreement",
+        "plusLargeAccountsAgreement",
+        "ccsForEnterprise",
+        "ccsComponents"
+      ]
+    },
+    "d2cVariablePlatformFee": {
+      "uiName": "D2C Variable Platform Fee (%)",
+      "apiField": "variablePlatformFee_af134335-06fa-4c91-954a-76b70c08adb4_number",
+      "dataType": "number",
+      "description": "Direct-to-consumer variable platform fee percentage",
+      "searchable": false,
+      "required": true,
+      "usedBy": [
+        "plusAgreement",
+        "plusLargeAccountsAgreement",
+        "ccsForEnterprise",
+        "ccsComponents"
+      ]
+    },
+    "b2bVariablePlatformFee": {
+      "uiName": "B2B Variable Platform Fee (%)",
+      "apiField": "b2BVariablePlatformFee_af134335-06fa-4c91-954a-76b70c08adb4_number",
+      "dataType": "number",
+      "description": "Business-to-business variable platform fee percentage",
+      "searchable": false,
+      "required": true,
+      "usedBy": [
+        "plusAgreement",
+        "plusLargeAccountsAgreement",
+        "ccsForEnterprise",
+        "ccsComponents"
+      ]
+    },
+    "retailVariablePlatformFee": {
+      "uiName": "Retail Variable Platform Fee (%)",
+      "apiField": "retailVariablePlatformFee_c8752c3e-80c4-4ba7-bc88-2c8e3c40f7d6_number",
+      "dataType": "number",
+      "description": "Retail variable platform fee percentage",
+      "searchable": false,
+      "required": true,
+      "usedBy": [
+        "plusAgreement",
+        "plusLargeAccountsAgreement",
+        "ccsForEnterprise",
+        "ccsComponents"
+      ]
+    },
+    "transactionFee": {
+      "uiName": "Transaction Fee (%)",
+      "apiField": "custom948f83a18721475691fabc408560f0ae_0e1fb205-c256-4efc-aa07-7eaf884b3dd9_number",
+      "dataType": "number",
+      "description": "Transaction fee percentage",
+      "searchable": false,
+      "required": true,
+      "usedBy": [
+        "plusAgreement",
+        "plusLargeAccountsAgreement",
+        "ccsForEnterprise",
+        "ccsComponents"
+      ]
+    },
+    "promoType": {
+      "uiName": "Promo Type",
+      "apiField": "promoType_ce6836f1-59d9-4f29-8c61-c6f0ebda8707_string",
+      "dataType": "string",
+      "description": "Type of promotional pricing applied",
+      "searchable": true,
+      "required": false,
+      "usedBy": [
+        "plusAgreement",
+        "plusLargeAccountsAgreement",
+        "ccsForEnterprise",
+        "ccsComponents"
+      ]
+    },
+    "customerNoticeForNonRenewal": {
+      "uiName": "Customer Notice for Non-Renewal (days)",
+      "apiField": "custom1d18db5e359541688df8a459b2555b6e_0e1fb205-c256-4efc-aa07-7eaf884b3dd9_number",
+      "dataType": "number",
+      "description": "Days notice customer must provide to not renew",
+      "searchable": false,
+      "required": true,
+      "usedBy": [
+        "plusAgreement",
+        "plusLargeAccountsAgreement",
+        "ccsForEnterprise",
+        "ccsComponents"
+      ]
+    }
+  },
+  "searchStrategies": {
+    "plusAgreements": {
+      "primarySearchField": "counterpartyName",
+      "alternativeSearchFields": [
+        {
+          "field": "brandName1_af134335-06fa-4c91-954a-76b70c08adb4_string",
+          "userFriendlyName": "Brand Name",
+          "example": "Fast-Fix Jewelry & Watch Repairs",
+          "useCase": "When user knows the brand but not legal entity name"
+        },
+        {
+          "field": "custome2e9166e97b6446f827926cdb3508de6_0e1fb205-c256-4efc-aa07-7eaf884b3dd9_string",
+          "userFriendlyName": "Shopify URL",
+          "example": "caseboss.myshopify.com",
+          "useCase": "When user knows the store URL"
+        }
+      ],
+      "notes": "For Plus contracts, users may search by legal name, brand name, or Shopify URL. The MCP should try all three."
+    }
+  },
+  "metadata": {
+    "lastUpdated": "2025-11-20",
+    "source": "critical_fields_template.csv",
+    "totalFields": 18,
+    "searchableFields": 8
+  }
+}
+
+

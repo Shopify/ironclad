@@ -1,0 +1,453 @@
+{
+  "practiceAreas": {
+    "Revenue": {
+      "description": "Shopify Plus subscription contracts and related documents",
+      "recordTypes": {
+        "plusAgreement": {
+          "uiName": "Plus Agreement",
+          "apiValue": "plusAgreement",
+          "documentTypes": [
+            {
+              "name": "Standard Plus Agreement",
+              "exampleId": "IC-5701",
+              "description": "Standard Shopify Plus contracts"
+            },
+            {
+              "name": "Multi-Brand Agreement",
+              "exampleId": "IC-121364",
+              "description": "Shopify Plus contracts with multiple brands"
+            },
+            {
+              "name": "High Store Volume Agreement",
+              "exampleId": "IC-121001",
+              "description": "Shopify Plus contracts for orgs with greater than 25 brands/stores"
+            },
+            {
+              "name": "Non-Profit Organization (NPO) Agreement",
+              "exampleId": "IC-119262",
+              "description": "Shopify Plus contracts for non-profit orgs/charities with special pricing"
+            },
+            {
+              "name": "Affiliate Plus Agreement",
+              "exampleId": "IC-39561",
+              "description": "Shopify Plus contracts that are affiliated with a Standard Plus Contract",
+              "hasParent": true,
+              "notes": "These will always have a parentRecordID"
+            },
+            {
+              "name": "Master Subscription Agreement (MSA)",
+              "exampleId": "IC-14349",
+              "description": "An MSA for Plus - contains only legal terms. Sales Orders will be separate records",
+              "hasChildren": true,
+              "notes": "Sales orders will have a parentRecordID pointing to this MSA"
+            }
+          ],
+          "searchFields": [
+            "counterpartyName",
+            "brandName1_af134335-06fa-4c91-954a-76b70c08adb4_string",
+            "custome2e9166e97b6446f827926cdb3508de6_0e1fb205-c256-4efc-aa07-7eaf884b3dd9_string"
+          ],
+          "searchFieldAliases": {
+            "brand name": "brandName1_af134335-06fa-4c91-954a-76b70c08adb4_string",
+            "shopify url": "custome2e9166e97b6446f827926cdb3508de6_0e1fb205-c256-4efc-aa07-7eaf884b3dd9_string",
+            "store url": "custome2e9166e97b6446f827926cdb3508de6_0e1fb205-c256-4efc-aa07-7eaf884b3dd9_string"
+          }
+        },
+        "plusLargeAccountsAgreement": {
+          "uiName": "Plus Large Accounts Agreement",
+          "apiValue": "plusLargeAccountsAgreement",
+          "documentTypes": [
+            {
+              "name": "Standard Plus Agreement",
+              "exampleId": "IC-120483",
+              "description": "Standard Shopify Plus contracts for large accounts"
+            },
+            {
+              "name": "Multi-Brand Agreement",
+              "exampleId": "IC-119257",
+              "description": "Shopify Plus contracts with multiple brands"
+            },
+            {
+              "name": "High Store Volume Agreement",
+              "exampleId": "IC-117483",
+              "description": "Shopify Plus contracts for orgs with greater than 25 brands/stores"
+            },
+            {
+              "name": "Master Subscription Agreement (MSA)",
+              "exampleId": "IC-17611",
+              "description": "An MSA for Plus Large Accounts",
+              "hasChildren": true
+            }
+          ],
+          "searchFields": [
+            "counterpartyName",
+            "brandName1_af134335-06fa-4c91-954a-76b70c08adb4_string",
+            "custome2e9166e97b6446f827926cdb3508de6_0e1fb205-c256-4efc-aa07-7eaf884b3dd9_string"
+          ]
+        },
+        "ccsForEnterprise": {
+          "uiName": "CCS for enterprise",
+          "apiValue": "ccsForEnterprise",
+          "documentTypes": [
+            {
+              "name": "Standard CCS for enterprise Agreement",
+              "exampleId": "IC-115185",
+              "description": "Standard CCS for enterprise agreements (Essentially Plus for Enterprise level customers)"
+            },
+            {
+              "name": "CCS for enterprise Amendment",
+              "exampleId": "IC-104717",
+              "description": "An amendment used to upgrade from Plus to CCS for enterprise"
+            },
+            {
+              "name": "Multi-Brand CCS for enterprise Agreement",
+              "exampleId": "IC-105006",
+              "description": "The multi-brand equivalent to Multi-Brand Plus, but for enterprise"
+            },
+            {
+              "name": "CCS Master Subscription Agreement",
+              "exampleId": null,
+              "description": "MSA for enterprise",
+              "hasChildren": true
+            }
+          ],
+          "searchFields": [
+            "counterpartyName",
+            "brandName1_af134335-06fa-4c91-954a-76b70c08adb4_string",
+            "custome2e9166e97b6446f827926cdb3508de6_0e1fb205-c256-4efc-aa07-7eaf884b3dd9_string"
+          ]
+        },
+        "ccsComponents": {
+          "uiName": "CCS Components",
+          "apiValue": "ccsComponents",
+          "documentTypes": [
+            {
+              "name": "CCS Master Subscription Agreement",
+              "exampleId": null,
+              "description": "MSA for enterprise components"
+            },
+            {
+              "name": "Shop Pay Component",
+              "exampleId": "IC-116628",
+              "description": "A component of CCS for enterprise - Shop Pay only"
+            },
+            {
+              "name": "Storefront Component",
+              "exampleId": "IC-114297",
+              "description": "A component of CCS for enterprise - Storefront only"
+            },
+            {
+              "name": "Checkout Component",
+              "exampleId": null,
+              "description": "A component of CCS for enterprise - Checkout only"
+            }
+          ],
+          "searchFields": [
+            "counterpartyName",
+            "brandName1_af134335-06fa-4c91-954a-76b70c08adb4_string",
+            "custome2e9166e97b6446f827926cdb3508de6_0e1fb205-c256-4efc-aa07-7eaf884b3dd9_string"
+          ]
+        },
+        "plusRenewal": {
+          "uiName": "Plus Renewal",
+          "apiValue": "plusRenewal",
+          "documentTypes": [
+            {
+              "name": "Plus Renewal Amendment",
+              "exampleId": "IC-121400",
+              "description": "Plus Agreements auto-renew, but merchants can sign renewal amendments for longer terms/better pricing"
+            },
+            {
+              "name": "Plus TOS Amendment",
+              "exampleId": "IC-120833",
+              "description": "TOS refers to online terms of service. No contract in Ironclad for base TOS, but TOS Merchants can sign renewal amendments"
+            }
+          ],
+          "searchFields": ["counterpartyName"]
+        },
+        "plusAmendingAgreement": {
+          "uiName": "Plus Amending Agreement",
+          "apiValue": "plusAmendingAgreement",
+          "documentTypes": [
+            {
+              "name": "Plus Amending Agreement",
+              "exampleId": "IC-116897",
+              "description": "Amends the Plus Agreement - general amendments"
+            },
+            {
+              "name": "Automated 2024 Rate Lock Amendment",
+              "exampleId": "IC-78577",
+              "description": "Allowed merchants to renew for 3 years at current price, avoiding price increase"
+            },
+            {
+              "name": "2024 Rate Lock Amendment",
+              "exampleId": "IC-60815",
+              "description": "Custom rate locks granted after automated deadline"
+            },
+            {
+              "name": "Consent to Assignment",
+              "exampleId": "IC-60930",
+              "description": "Shopify provides consent to assign Plus Agreement to new third-party"
+            }
+          ],
+          "searchFields": ["counterpartyName"]
+        },
+        "plusAddenda": {
+          "uiName": "Plus Addenda",
+          "apiValue": "plusAddenda",
+          "documentTypes": [
+            {
+              "name": "Incremental Storage Fee Addendum",
+              "exampleId": "IC-121285",
+              "description": "Allows merchant to use more storage for additional fee"
+            },
+            {
+              "name": "Change Order",
+              "exampleId": "IC-120589",
+              "description": "Most common addendum - used for business name changes, address changes, contact info changes"
+            },
+            {
+              "name": "AvaTax Addendum",
+              "exampleId": "IC-771",
+              "description": "Provides merchant with AvaTax service for a fee"
+            },
+            {
+              "name": "Shop Pay Conversion Addendum",
+              "exampleId": null,
+              "description": "Shop Pay conversion addendum"
+            },
+            {
+              "name": "Additional Services Fee Addendum",
+              "exampleId": null,
+              "description": "Additional services fee addendum"
+            }
+          ],
+          "searchFields": ["counterpartyName"]
+        },
+        "plusNda": {
+          "uiName": "Plus NDA",
+          "apiValue": "plusNda",
+          "documentTypes": [
+            {
+              "name": "Plus NDA",
+              "exampleId": "IC-120692",
+              "description": "Non-Disclosure Agreement for potential Plus merchants"
+            }
+          ],
+          "searchFields": ["counterpartyName"]
+        }
+      }
+    },
+    "Procurement": {
+      "description": "Vendor and supplier contracts",
+      "recordTypes": {
+        "procurementAgreement": {
+          "uiName": "Procurement Agreement",
+          "apiValue": "procurementAgreement",
+          "documentTypes": [
+            {
+              "name": "Master Services Agreement",
+              "exampleId": "IC-95582",
+              "description": "Vendor/supplier contracts, mostly for software. May contain Order Form and/or SOW"
+            },
+            {
+              "name": "MPA",
+              "exampleId": "IC-117224",
+              "description": "Master Purchase Agreement - vendor/supplier contracts for products. May contain Order Form and/or SOW"
+            },
+            {
+              "name": "Agency Agreement",
+              "exampleId": "IC-120161",
+              "description": "Vendor/supplier contracts for services. May contain Order Form and/or SOW"
+            },
+            {
+              "name": "Order Form",
+              "exampleId": "IC-120977",
+              "description": "Vendor/supplier order form for services",
+              "hasParent": true,
+              "notes": "Should usually have a parentRecordID for governing contract"
+            },
+            {
+              "name": "SOW",
+              "exampleId": "IC-121237",
+              "description": "Statement of Work for professional services",
+              "hasParent": true,
+              "notes": "Should usually have a parentRecordID for governing contract"
+            },
+            {
+              "name": "Recruiting Services Agreement",
+              "exampleId": "IC-44303",
+              "description": "Contract for recruiting services company"
+            },
+            {
+              "name": "Sponsorship Agreement",
+              "exampleId": "IC-120666",
+              "description": "Contract for sponsorships"
+            },
+            {
+              "name": "Membership Agreement",
+              "exampleId": "IC-50783",
+              "description": "Contract for memberships"
+            },
+            {
+              "name": "Consulting Agreement",
+              "exampleId": "IC-120352",
+              "description": "Contract for hiring consultants. Often referred to as 'External Workers'"
+            }
+          ],
+          "searchFields": ["counterpartyName"]
+        },
+        "nda": {
+          "uiName": "NDA",
+          "apiValue": "NDA",
+          "documentTypes": [
+            {
+              "name": "Mutual Non-Disclosure Agreement",
+              "exampleId": "IC-121309",
+              "description": "Mutual NDA for vendors and partners"
+            }
+          ],
+          "searchFields": ["counterpartyName"]
+        }
+      }
+    },
+    "Partnerships": {
+      "description": "Partner program agreements and addendums",
+      "recordTypes": {
+        "partnerDevelopmentFundPpaAddendum": {
+          "uiName": "Partner Development Fund PPA Addendum",
+          "apiValue": "partnerDevelopmentFundPpaAddendum",
+          "documentTypes": [
+            {
+              "name": "Partner Development Fund PPA Addendum",
+              "exampleId": "IC-121333",
+              "description": "Partnership agreement for development funds. PPA = Partner Program Agreement (online terms, no Ironclad contract)"
+            }
+          ],
+          "searchFields": ["counterpartyName"]
+        },
+        "partnerMarketingAddendum": {
+          "uiName": "Partner Marketing Addendum",
+          "apiValue": "partnerMarketingAddendum",
+          "documentTypes": [
+            {
+              "name": "Partner Marketing Addendum",
+              "exampleId": "IC-121132",
+              "description": "Partnership agreement for marketing funds and development"
+            }
+          ],
+          "searchFields": ["counterpartyName"]
+        },
+        "partnerCoMarketingAddendum": {
+          "uiName": "Partner Co-Marketing Addendum",
+          "apiValue": "partnerCoMarketingAddendum",
+          "documentTypes": [
+            {
+              "name": "Co-Marketing Addendum to the Shopify Partner Program Agreement",
+              "exampleId": "IC-121371",
+              "description": "Partnership agreement for marketing funds and development"
+            }
+          ],
+          "searchFields": ["counterpartyName"]
+        },
+        "ordersApiPpaAddendum": {
+          "uiName": "Orders API PPA Addendum",
+          "apiValue": "ordersApiPpaAddendum",
+          "documentTypes": [
+            {
+              "name": "Orders API PPA Addendum",
+              "exampleId": null,
+              "description": "Orders API PPA Addendum"
+            }
+          ],
+          "searchFields": ["counterpartyName"]
+        },
+        "3PlAddendumToThePpa": {
+          "uiName": "3PL Addendum to the PPA",
+          "apiValue": "3PlAddendumToThePpa",
+          "documentTypes": [
+            {
+              "name": "3PL Addendum to the PPA",
+              "exampleId": "IC-114499",
+              "description": "Partnership agreement for 3PL (third-party logistics)"
+            }
+          ],
+          "searchFields": ["counterpartyName"]
+        },
+        "flipTheBasePpaPartner": {
+          "uiName": "Flip the Base PPA Partner",
+          "apiValue": "flipTheBasePpaPartner",
+          "documentTypes": [
+            {
+              "name": "Flip the Base PPA Addendum",
+              "exampleId": "IC-120495",
+              "description": "Flip the Base partnership agreement"
+            }
+          ],
+          "searchFields": ["counterpartyName"]
+        },
+        "alliancePartnerLoi": {
+          "uiName": "Alliance Partner LOI",
+          "apiValue": "alliancePartnerLoi",
+          "documentTypes": [
+            {
+              "name": "*none*",
+              "exampleId": "IC-121335",
+              "description": "Alliance partnership Letter of Intent"
+            }
+          ],
+          "searchFields": ["counterpartyName"]
+        },
+        "strategicProductPartnershipPpaAddendum": {
+          "uiName": "Strategic Product Partnership PPA Addendum",
+          "apiValue": "strategicProductPartnershipPpaAddendum",
+          "documentTypes": [
+            {
+              "name": "Strategic Product Partnership Addendum",
+              "exampleId": "IC-106613",
+              "description": "Strategic product partnership agreement"
+            },
+            {
+              "name": "Amendment to the Strategic Product Partnership Addendum",
+              "exampleId": "IC-112945",
+              "description": "Amending Agreement to Strategic Product Partnership"
+            }
+          ],
+          "searchFields": ["counterpartyName"]
+        },
+        "strategic": {
+          "uiName": "Strategic",
+          "apiValue": "strategic",
+          "documentTypes": [
+            {
+              "name": "various",
+              "exampleId": "IC-117063",
+              "description": "Strategic Partnership contracts. Various document types: MSA, Amendment, Appendix"
+            }
+          ],
+          "searchFields": ["counterpartyName"]
+        },
+        "salesChannel": {
+          "uiName": "Sales Channel",
+          "apiValue": "salesChannel",
+          "documentTypes": [
+            {
+              "name": "various",
+              "exampleId": "IC-118400",
+              "description": "Sales Channel contracts. Various document types: MSA, Amendment, Appendix"
+            }
+          ],
+          "searchFields": ["counterpartyName"]
+        }
+      }
+    }
+  },
+  "metadata": {
+    "lastUpdated": "2025-11-20",
+    "source": "record_types_template.csv",
+    "totalRecordTypes": 24,
+    "totalPracticeAreas": 3
+  }
+}
+
+

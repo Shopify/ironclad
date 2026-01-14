@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  ironclad-mcp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ironclad-mcp-server
+    ports:
+      - "8000:8000"
+    environment:
+      # GCP Configuration
+      GCP_PROJECT_ID: ${GCP_PROJECT_ID}
+      GOOGLE_APPLICATION_CREDENTIALS: /app/credentials/service-account-key.json
+      
+      # Ironclad Configuration
+      IRONCLAD_BASE_URL: ${IRONCLAD_BASE_URL:-https://na1.ironcladapp.com}
+      IRONCLAD_API_TIMEOUT: ${IRONCLAD_API_TIMEOUT:-120}
+      
+      # Server Configuration
+      HOST: 0.0.0.0
+      PORT: 8000
+    
+    volumes:
+      # Mount service account key
+      - ${GOOGLE_APPLICATION_CREDENTIALS}:/app/credentials/service-account-key.json:ro
+    
+    restart: unless-stopped
+    
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+networks:
+  default:
+    name: ironclad-mcp-network
