@@ -398,6 +398,99 @@ These operations complete in < 5 seconds with 100% reliability.
 
 ---
 
+### ✅ Marketing Rights Queries
+
+**Trigger Patterns**:
+- "Can we use [merchant]'s logo?"
+- "Marketing rights for [merchant]"
+- "Can we use [merchant] in our marketing?"
+- "Logo usage rights for [company]"
+- "What are the marketing rights for IC-[number]?"
+- "Can [vendor] use Shopify's logo?"
+
+**Tool**: `get_contract_details`
+
+**Response Logic**:
+
+**For Plus Agreements, Plus Large Agreements, CCS for Enterprise**:
+
+Check the `Marketing Rights` metadata field in the contract details:
+
+1. **If "Standard"**:
+   ```
+   ✅ **Marketing Rights**: Standard
+   
+   Shopify can use [merchant]'s name and logo in marketing materials without 
+   requiring explicit consent for each use.
+   ```
+
+2. **If "Meet in the Middle"**:
+   ```
+   ⚠️ **Marketing Rights**: Meet in the Middle
+   
+   Shopify requires explicit consent from [merchant] before using their name 
+   or logo in marketing materials. Please reach out to the merchant for approval 
+   before each use.
+   ```
+
+3. **If "Other"**:
+   ```
+   📄 **Marketing Rights**: Other (Bespoke Arrangement)
+   
+   This contract has custom marketing rights terms. Please review the contract 
+   in Ironclad to understand the specific rights granted:
+   
+   1. Open Ironclad → Search for IC-[number]
+   2. Review the Marketing Rights section of the contract
+   3. Look for clauses about logo usage, brand usage, or publicity rights
+   
+   [Link to contract in Ironclad]
+   ```
+
+4. **If field is empty or not present**:
+   ```
+   ⚠️ Marketing Rights information is not recorded in metadata.
+   
+   Please review the contract in Ironclad:
+   1. Open Ironclad → Search for IC-[number]
+   2. Look for Marketing Rights or Publicity Rights clauses
+   ```
+
+**For Procurement Agreements and Other Record Types**:
+
+Marketing rights metadata is only captured for Plus Agreements. For vendor contracts:
+
+```
+⚠️ Marketing rights for vendor use of Shopify's name/logo are not captured 
+in contract metadata.
+
+To determine if [vendor] can use Shopify's branding:
+1. Open Ironclad → Search for IC-[number]
+2. Review the contract for:
+   - "Publicity Rights" clauses
+   - "Marketing" or "Brand Usage" sections
+   - "Confidentiality" restrictions
+   - "Use of Marks" or "Trademark License" clauses
+
+📍 **Note**: Contract reading/clause extraction is planned for Phase 2 (Q2 2026), 
+which will make these queries instant.
+
+Would you like me to help you find the contract ID if you don't have it?
+```
+
+**Examples**:
+- ✅ "Can we use Fast-Fix Jewelry's logo?" → Get contract details, check Marketing Rights field
+- ✅ "Marketing rights for IC-120483" → Get contract details, return Marketing Rights value
+- ✅ "What are the marketing rights for Gold Standard?" → Search for contract first, then get details
+- ✅ "Can Zoom use Shopify's logo in their materials?" → Get contract, inform that field doesn't exist for Procurement
+
+**Expected Time**: < 2 seconds (for lookup) + manual contract review if "Other"
+
+**Special Note for Phase 2**: When contract reading is available, the MCP will be able to 
+automatically extract marketing/publicity rights clauses from any contract type.
+
+---
+
 ## 🎯 Decision Tree
 
 Use this flowchart to determine routing:
@@ -428,6 +521,8 @@ User Query
 ├─ Says "attachments"? → ✅ USE MCP → get_contract_attachments
 │
 ├─ Says "address"? → ✅ USE MCP → extract_counterparty_address
+│
+├─ Says "marketing rights"/"logo"/"branding"? → ✅ USE MCP → get_contract_details + interpret Marketing Rights field
 │
 └─ General search/keyword? → ✅ USE MCP → search_contracts (query)
 ```

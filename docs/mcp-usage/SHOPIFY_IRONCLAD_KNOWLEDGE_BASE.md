@@ -1,8 +1,8 @@
 # Shopify Ironclad Knowledge Base
 ## Complete Reference for Ironclad MCP
 
-**Last Updated**: 2025-11-20  
-**Version**: 1.0  
+**Last Updated**: 2026-01-15  
+**Version**: 1.1 (Added Marketing Rights)  
 **Status**: Production
 
 ---
@@ -16,11 +16,12 @@ This document provides the Ironclad MCP with essential context about Shopify's c
 ## 📋 Table of Contents
 
 1. [Contract Organization](#contract-organization)
-2. [Record Types by Practice Area](#record-types-by-practice-area)
-3. [Search Strategies](#search-strategies)
-4. [Critical Fields Reference](#critical-fields-reference)
-5. [Contract Families & Relationships](#contract-families--relationships)
-6. [Common Queries & Examples](#common-queries--examples)
+2. [Marketing Rights in Merchant Contracts](#marketing-rights-in-merchant-contracts)
+3. [Record Types by Practice Area](#record-types-by-practice-area)
+4. [Search Strategies](#search-strategies)
+5. [Critical Fields Reference](#critical-fields-reference)
+6. [Contract Families & Relationships](#contract-families--relationships)
+7. [Common Queries & Examples](#common-queries--examples)
 
 ---
 
@@ -45,6 +46,52 @@ Revenue
       ├─ High Store Volume Agreement
       └─ NPO Agreement
 ```
+
+---
+
+## Marketing Rights in Merchant Contracts
+
+**Context**: Shopify often needs to use merchant names and logos in marketing materials (case studies, success stories, testimonials, etc.). The marketing rights granted by merchants are captured in Plus Agreement metadata.
+
+### Marketing Rights Field Values
+
+**Applies To**: Plus Agreements, Plus Large Agreements, CCS for Enterprise
+
+**Field Name**: `Marketing Rights` (or `marketingRights1_0e1fb205-c256-4efc-aa07-7eaf884b3dd9_string` in API)
+
+**Possible Values**:
+
+1. **Standard**
+   - **Meaning**: Shopify can use merchant's name and logo in marketing materials without requiring explicit consent for each use
+   - **Action**: ✅ Proceed with marketing use (within scope of agreement)
+   - **Example Use**: "Fast-Fix Jewelry uses Shopify Plus to power their ecommerce"
+
+2. **Meet in the Middle**
+   - **Meaning**: Requires explicit consent from merchant before each use
+   - **Action**: ⚠️ Contact merchant for approval before using name/logo
+   - **Process**: Reach out via primary contact listed in contract
+
+3. **Other**
+   - **Meaning**: Custom/bespoke marketing rights arrangement
+   - **Action**: 📄 Read the contract to understand specific terms
+   - **Location**: Look for "Marketing Rights", "Publicity Rights", or "Use of Marks" sections
+
+### Common Marketing Rights Questions
+
+**Q**: "Can we use [merchant]'s logo in a case study?"  
+**A**: Check the `Marketing Rights` field:
+- **Standard** → Yes, proceed
+- **Meet in the Middle** → Get approval first
+- **Other** → Review contract for specifics
+
+**Q**: "Can [vendor] use Shopify's logo in their materials?"  
+**A**: Marketing rights for vendor use of Shopify's branding are **not** captured in metadata for Procurement Agreements. Must review contract manually (look for "Publicity Rights" or "Use of Marks" clauses).
+
+### Why This Matters
+
+- **Compliance**: Using merchant branding without proper rights could violate contract terms
+- **Relationships**: Respecting marketing rights maintains good merchant relationships
+- **Legal**: Trademark/IP considerations require clear documentation of usage rights
 
 ---
 
